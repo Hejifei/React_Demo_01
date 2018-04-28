@@ -90,7 +90,17 @@ npm install --save-dev bundle-collapser envify uglify-js uglifyify
 npm install --save-dev rollup-plugin-commonjs rollup-plugin-replace rollup-plugin-uglify
 
 #上下文 也就是通信
-通过将 childContextTypes 和 getChildContext 添加到context 提供者，React 自动地向下传递信息，并且子树中的任何组件都可以通过定义 contextTypes 去访问它。
-
+1、通过将 childContextTypes 和 getChildContext 添加到context 提供者，React 自动地向下传递信息，并且子树中的任何组件都可以通过定义 contextTypes 去访问它。
+2、生命周期中可以引用Context
+constructor(props, context)
+componentWillReceiveProps(nextProps, nextContext)
+shouldComponentUpdate(nextProps, nextState, nextContext)
+componentWillUpdate(nextProps, nextState, nextContext)
+componentDidUpdate(prevProps, prevState, prevContext)
+3、无状态的函数式组件中引用Context
+Context需要变化的话可以用state的值赋值给他。
+getChildContext() {
+    return {type: this.state.type};
+}
 
 
