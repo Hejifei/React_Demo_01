@@ -6,15 +6,15 @@ function SonInput(props) {
         <input ref={props.inputRef} />
       </div>
     );
-  }
+}
   
-  function Parent(props) {
+function Parent(props) {
     return (
       <div>
         My input: <SonInput inputRef={props.inputRef} />
       </div>
     );
-  }
+}
 class CustomTextInput extends React.Component {
     constructor(props) {
       super(props);
